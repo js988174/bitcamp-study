@@ -27,7 +27,7 @@ public class Exam0300 {
   //- 만약 오버라이딩 규칙을 따르지 않는다면 컴파일 오류를 발생시킬 것이다.
   //
   //@Override
-  public String toString2() {
+  public String toString() {
     return "Exam12";
   }
 }
