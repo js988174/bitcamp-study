@@ -9,7 +9,11 @@ public class Exam0451 {
     // 위의 방식으로 for 문을 사용할 경우
     // 변수 선언을 바깥에 둘 수 없다.
     String name;
+<<<<<<< HEAD
    // for (name : names) // 컴파일 오류!
+=======
+    //for (name : names) // 컴파일 오류!
+>>>>>>> 49a5b722358f7d35ef27d795681ed36503b4bc4c
     //  System.out.println(name);
   }
 }
