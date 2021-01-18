@@ -16,7 +16,8 @@ public class Exam0410 {
     // 3) 문장 => System.out.print(i + " ")
     // 4) 변수증가문 => i++
     // 조건이 참인 동안 2 ~ 4를 반복한다.
-
+    
+    
     // for 문에서 선언한 변수는 그 for 문 안에서만 사용할 수 있다.
     //System.out.println(i); // 컴파일 오류!
   }
