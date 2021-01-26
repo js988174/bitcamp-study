@@ -5,6 +5,7 @@ public class Exam0840 {
 
   static class A {
 
+    int a = 100;
     int b = 200;
     int c;
 
@@ -19,10 +20,7 @@ public class Exam0840 {
       // a = 100;
 
       c = 300;
-    }
-
-    int a = 100;
-
+    }  
   }
 
   public static void main(String[] args) {
