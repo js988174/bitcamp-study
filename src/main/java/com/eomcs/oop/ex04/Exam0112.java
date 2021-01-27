@@ -1,10 +1,12 @@
 // 생성자 활용 예 - 자바에서 제공하는 클래스 사용을 통해 생성자 활용을 익혀보자!
 package com.eomcs.oop.ex04;
 
+import java.nio.charset.Charset;
+
 public class Exam0112 {
 
   public static void main(String[] args) throws Exception {
-
+    System.out.println(Charset.defaultCharset());
     // 한글 문자 코드의 바이트 배열을 가지고 String 인스턴스 초기화시키기.
     byte[] bytes = {
         (byte)0xb0, (byte)0xa1, // 가

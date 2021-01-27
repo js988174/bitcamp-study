@@ -9,7 +9,7 @@ public class Exam0320 {
 
     // 1부터 100까지의 합은?
     while (count < 100) {
-       count++;
+      //count++;
       //sum += count;
       sum += ++count;
     }

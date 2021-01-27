@@ -10,22 +10,22 @@ public class Exam0230 {
     // => case 값으로 변수를 사용할 수 없다. 리터럴만 가능하다.
     byte b = 2;
     switch (b) {
-      case 1:System.out.println("a");
-      case 2:System.out.println("b");
+      case 1:
+      case 2:
       default:
     }
 
     short s = 2;
     switch (s) {
-      case 1:System.out.println("c");
-      case 2:System.out.println("d");
+      case 1:
+      case 2:
       default:
     }
 
     int i = 2;
     switch (i) {
-      case 1:System.out.println("e");
-      case 2:System.out.println("f");
+      case 1:
+      case 2:
       default:
     }
 
@@ -34,7 +34,7 @@ public class Exam0230 {
       // case 의 값도 int 값이면 무엇이든 된다.
       case 'A': // 0x41 = 65
       case 66:
-      case 0x43:System.out.println("g");
+      case 0x43:
       default:
     }
 
@@ -42,7 +42,7 @@ public class Exam0230 {
     String str = "hello";
     switch (str) {
       // case 의 값으로 String 가능하다.
-      case "hello":System.out.println("a");
+      case "hello":
       case "ohora":
       case "hul":
       default:

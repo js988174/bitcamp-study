@@ -20,19 +20,6 @@ public class Exam0710 {
       System.out.println("Hello!");
     }
 
-    A() {
-      System.out.println("Hello!");
-      System.out.println("aaaaaa");
-    }
-    A(int p1) {
-      System.out.println("Hello!");
-      System.out.println("bbbbbbb");
-    }
-    A(String p1, int p2) {
-      System.out.println("Hello!");
-      System.out.println("cccccc");
-    }
-
     // 생성자가 없으면,
     // - 기본 생성자가 생성되어 앞 부분에 삽입된다.
     // - 바이트코드(Exam0710$A.class)를 확인해 보라!

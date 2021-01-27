@@ -9,19 +9,19 @@ public class Exam0220 {
     //Integer i1 = new Integer(100);
     //Integer i2 = new Integer(200);
     //Integer i3 = new Integer(300);
-    
+
     // 대신 다음과 같이 클래스 메서드를 사용하여 Integer 인스턴스를 생성하라!
     Integer i1 = Integer.valueOf(100);
     Integer i2 = Integer.valueOf(200);
     Integer i3 = Integer.valueOf(300);
-    
+
     // 인스턴스 메서드 사용
     System.out.println(i2.compareTo(i1));
     System.out.println(i2.compareTo(i3));
 
     int v1 = i2.intValue();
     System.out.println(v1);
-
+    System.out.println("----------------------");
     // 스태틱 메서드 = 클래스 메서드 사용
     int v2 = Integer.parseInt("1280");
     String s1 = Integer.toBinaryString(77);

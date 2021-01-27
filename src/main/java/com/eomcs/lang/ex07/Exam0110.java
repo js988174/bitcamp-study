@@ -9,7 +9,7 @@ public class Exam0110 {
     Scanner keyScan = new Scanner(System.in);
     System.out.print("밑변의 길이? ");
     int len = keyScan.nextInt();
-// 별 앞에 공백
+
     int starLen = 1;
     while (starLen <= len) {
       int spaceCnt = 1;
@@ -18,7 +18,7 @@ public class Exam0110 {
         System.out.print(" ");
         spaceCnt++;
       }
-// 별 출력
+
       int starCnt = 1;
       while (starCnt <= starLen) {
         System.out.print("*");

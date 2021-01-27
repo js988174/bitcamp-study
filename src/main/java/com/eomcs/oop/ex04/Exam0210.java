@@ -12,7 +12,7 @@ public class Exam0210 {
 
     System.out.println(s1.compareTo("Helli"));
     System.out.println(s1.compareTo("Hello"));
-    System.out.println(s1.compareTo("Hellu"));
+    System.out.println(s1.compareTo("Heliu"));
 
     System.out.println(s1.contains("ll"));
     System.out.println(s1.contains("ee"));
@@ -23,6 +23,7 @@ public class Exam0210 {
     System.out.println(s2); // 새로 문자열을 만든다.
 
     // 두 인스턴스에 들어 있는 문자열이 같은 지 비교할 때 
+    System.out.println("------------------------------");
     System.out.println(s1.equals("aaa"));
     System.out.println(s1.equals("Hello"));
 
@@ -43,7 +44,7 @@ public class Exam0210 {
     for (int i = 0; i < bytes.length; i++)
       System.out.printf("%x,", bytes[i]);
     System.out.println();
-
+    System.out.println("------------------------------------");
     // String 클래스에도 특정 인스턴스가 아닌 일반용으로 
     // 문자열을 다룰 수 있는 메서드를 제공한다.
     // 즉 "클래스 메서드=스태틱 메서드"를 제공한다.

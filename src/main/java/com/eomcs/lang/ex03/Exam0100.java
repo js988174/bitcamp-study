@@ -10,7 +10,7 @@ public class Exam0100 {
     System.out.println(78); // 10진수
     System.out.println(+78);
     System.out.println(-78);
-    System.out.println(0116); //  0하나로 시작하면 8진수
+    System.out.println(0116); // 8진수
     System.out.println(0x4e); // 16진수
     System.out.println(0b01001110); // 2진수
     

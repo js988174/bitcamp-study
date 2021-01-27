@@ -1,3 +1,4 @@
+
 // 인스턴스 메서드와 클래스 메서드의 활용 - Date 클래스
 package com.eomcs.oop.ex04;
 
@@ -22,6 +23,7 @@ public class Exam0240 {
     // yyyy-MM-dd 형식으로 다루기 때문에 편리하다.
 
     // 스태틱 메서드 활용
+    System.out.println("-----------------------------");
     long currMillis = System.currentTimeMillis();
 
     // 생성자 활용
