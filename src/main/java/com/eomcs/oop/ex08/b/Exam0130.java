@@ -95,9 +95,9 @@ public class Exam0130 {
     // 인스턴스 변수에 직접 접근할 수 없기 때문에 메서드를 통해 값을 넣어야 한다.
     // => Customer3에는 인스턴스 변수의 값을 설정할 수 있는 셋터가 구비되어 있다.
     c1.setName("홍길동");
-    c1.setAge(300);
-    c1.setWeight(-100);
-    c1.setHeight(-50);
+    c1.setAge(100);
+    c1.setWeight(100);
+    c1.setHeight(50);
     // 셋터 메서드에서 유효한 값이 아니면 필터링하여 처리할 것이다.
 
     // 값을 꺼내보자!
