@@ -1,23 +1,29 @@
 package test;
-// 3개의 정수 값을 입력하고 최대값을 구하기
+// 오른쪽 같이 두 변수 a b 에 정수를 입력하고 b -a를 출력하는 프로그램 작성
 import java.util.Scanner;
 public class chap01 {
+
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("a의 값");
-    int a = scanner.nextInt();
-    System.out.println("b의 값");
-    int b = scanner.nextInt();
-    System.out.println("c의 값");
-    int c = scanner.nextInt();
+    int n = scanner.nextInt();
 
-    int max = a;
-    if (b > max)   max = b;
+    int sum = 0;
 
 
-    if (c > max)    max = c;
+    if (n > 0) {
+      for (int i = 1; i < n; i++) {
+        sum += i;
+      }
+    }else if ( n < 0) {
+      System.out.println("잘못 입력");
+    }else {
+      System.out.println("0");
+    }
+    System.out.println(sum);
 
-    System.out.println("최대값은 " +max +" 입니다 .");
+
+
+    scanner.close();
   }
 }
