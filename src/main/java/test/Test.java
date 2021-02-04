@@ -1,83 +1,30 @@
 package test;
 
+import java.sql.Date;
+
 public class Test {
-  static class Member{
-    int no;
-    String name;
-    int age;
 
-
-    static class Board {
-      int no;
-      String title;
-      String content;
-      int age;
-      String name;
-    }
-    // 상속 받은 메서드를 서브 클래스의 역활에 맞게 재정의 하자.
-    // 이것을 오버라이딩(overriding) 이라 부른다.
-    //
-    // 상속 받은 메서드?
-    // - 서브 클래스에서 호출할 수 있도록 권한을 회득한 수퍼 클래스의 메서드를 말한다.
-    // - 수퍼 클래스의 메서드를 복사해서 서브 클래스에 가져왔다는 뜻이 아니다.
-    // 
-    // 오버라이딩 문법
-    // - 수퍼 클래스의 메서드와 똑같은 시그너처를 가져야 한다.
-    //  컴파일 하기 전에 컴파일러가 먼저 계산을 해준다.
-
-    @Override
-    public boolean equals(Object obj) {
-      if (!(obj instanceof Member))
-        return false;
-
-      Member m = (Member) obj;
-
-      if (this.no != m.no)
-        return false;
-
-      if(!this.name.equals(m.name))
-        return false;
-
-      if (this.age != m.age)
-        return false;
-
-      return true;
-    }
-    @Override
-    public int hashCode() {
-      String str ="," + this.no + "," + this.age;
-      return str.hashCode();
-    }
+  static void print(int value) {
+    System.out.println("==>"+ value);
+  }
+  static void print(float f) {
+    System.out.println("==>"+ f);
   }
 
+  static void print(Object obj) {
+    System.out.println("==>"+ obj.toString());
+  }
+
+  static void print(Date date) {
+    System.out.println("==>"+ date);
+  }
 
   public static void main(String[] args) {
-    Member obj = new Member();
-    obj.no = 1;
-    obj.name = "홍길동";
-    obj.age = 20;
-
-    Member obj2 = new Member();
-    obj2.no = 1;
-    obj2.name = "홍길동";
-    obj2.age = 20;
-
-    String s = obj.toString();
-    System.out.println(s);
-    System.out.println(obj);
-    System.out.println(obj2);
-    System.out.println("-----------------------------");
-
-    System.out.println(Integer.toHexString(obj.hashCode()));
-    System.out.println(Integer.toHexString(obj2.hashCode()));
-
-    System.out.println("-----------------------------");
-    System.out.println(obj == obj2);
-    System.out.println(obj.equals(obj2));
-
-    System.out.println("-----------------------------");
 
 
+    print(100);
+    print(3.14f);
+    print("홍길동");
+    print(new Date(System.currentTimeMillis()));
   }
-
 }
