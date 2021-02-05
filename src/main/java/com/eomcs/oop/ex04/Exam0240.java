@@ -1,4 +1,3 @@
-
 // 인스턴스 메서드와 클래스 메서드의 활용 - Date 클래스
 package com.eomcs.oop.ex04;
 
@@ -7,6 +6,9 @@ import java.util.Date;
 public class Exam0240 {
   public static void main(String[] args) throws Exception {
     Date d1 = new Date();
+
+    String str0 = d1.toString();
+    System.out.println(str0);
 
     // 인스턴스 메서드 활용
     System.out.println(d1.getYear() + 1900);
@@ -23,7 +25,6 @@ public class Exam0240 {
     // yyyy-MM-dd 형식으로 다루기 때문에 편리하다.
 
     // 스태틱 메서드 활용
-    System.out.println("-----------------------------");
     long currMillis = System.currentTimeMillis();
 
     // 생성자 활용

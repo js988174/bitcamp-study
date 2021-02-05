@@ -13,10 +13,10 @@ public class Exam0121 {
     // 그럴 경우 toString()을 오버라이딩 하라!
     @Override
     public String toString() {
-      return "My3 [name=" + name + ", age=" + age + "]";
-
-
+      return "My [name=" + name + ", age=" + age + "]";
     }
+
+
   }
 
   public static void main(String[] args) {

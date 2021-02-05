@@ -6,9 +6,9 @@ public class Exam0220 {
     // 다음과 같이 생성자를 통해 Integer 객체를 생성할 수 있지만,
     // 이 생성자는 사용하지 말라고 권고한 것이기 때문에 
     // 가능한 개발 중에 사용하지 말라!
-    //Integer i1 = new Integer(100);
-    //Integer i2 = new Integer(200);
-    //Integer i3 = new Integer(300);
+    //    Integer i1 = new Integer(100);
+    //    Integer i2 = new Integer(200);
+    //    Integer i3 = new Integer(300);
 
     // 대신 다음과 같이 클래스 메서드를 사용하여 Integer 인스턴스를 생성하라!
     Integer i1 = Integer.valueOf(100);
@@ -21,7 +21,7 @@ public class Exam0220 {
 
     int v1 = i2.intValue();
     System.out.println(v1);
-    System.out.println("----------------------");
+
     // 스태틱 메서드 = 클래스 메서드 사용
     int v2 = Integer.parseInt("1280");
     String s1 = Integer.toBinaryString(77);
@@ -37,6 +37,8 @@ public class Exam0220 {
     boolean b = Boolean.parseBoolean("true");
     System.out.printf("%f, %b\n", f, b);
 
+    float f2 = Float.valueOf("3.14f");
+    System.out.printf("%f\n", f2);
   }
 }
 
