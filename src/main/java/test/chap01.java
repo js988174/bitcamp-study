@@ -6,22 +6,22 @@ public class chap01 {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    int n = scanner.nextInt();
+    System.out.println("a의 값");
+    int a = scanner.nextInt();
 
-    int sum = 0;
+    int b =0;
 
 
-    if (n > 0) {
-      for (int i = 1; i < n; i++) {
-        sum += i;
-      }
-    }else if ( n < 0) {
-      System.out.println("잘못 입력");
-    }else {
-      System.out.println("0");
+
+    while (true) {
+      System.out.println("b의 값을 입력하세요");
+      b = scanner.nextInt();
+      if (b > a) 
+        break;
+      System.out.println("잘못입력하셨습니다.");
     }
-    System.out.println(sum);
 
+    System.out.println("b-a =" + (b-a) );
 
 
     scanner.close();
