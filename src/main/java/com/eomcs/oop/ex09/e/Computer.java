@@ -34,7 +34,9 @@ public interface Computer {
   default void touch() {
     // 구현할 코드 있으면 작성하고, 없으면 빈 채로 둔다.
   }
+  default void dddd() {
 
+  }
   // 위에 touch()라는 새 규칙을 추가하더라도
   // 기존에 작성한 FirstComputer, SecondComputer, ThirdComputer 클래스 모두
   // 컴파일 오류가 발생하지 않는다.
