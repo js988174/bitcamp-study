@@ -22,32 +22,38 @@ public class Exam0530 {
     }
   }
 
-  static interface Calculator1 {
+  interface Calculator1 {
     double compute(int a, int b);
   }
 
-  static interface Calculator2 {
+  interface Calculator2 {
     float compute(int a, int b);
   }
 
-  static interface Calculator3 {
+  interface Calculator3 {
     short compute(int a, int b);
   }
 
-  static interface Calculator4 {
+  interface Calculator4 {
     void compute(int a, int b);
   }
 
-  static interface Calculator5 {
+  interface Calculator5 {
     Object compute(int a, int b);
   }
 
-  static interface Calculator6 {
+  interface Calculator6 {
     String compute(int a, int b);
   }
 
   public static void main(String[] args) {
 
+    Calculator1 c0 = new Calculator1() {
+      @Override
+      public double compute(int a , int b) {
+        return MyCalculator.plus(a, b);
+      }
+    };
     // 리턴 타입 int ===> double
     Calculator1 c1 = MyCalculator::plus; // OK!
     // 위 문장은 다음 문장과 같다.
