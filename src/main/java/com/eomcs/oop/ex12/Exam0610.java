@@ -43,6 +43,8 @@ public class Exam0610 {
 
     System.out.println("[보통예금]");
     Interest i1 = 보통예금::year;
+
+
     System.out.printf("년 이자: %.1f\n", i1.compute(10_0000_0000));
 
     i1 = 보통예금::month;

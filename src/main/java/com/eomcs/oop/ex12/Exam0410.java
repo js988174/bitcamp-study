@@ -3,25 +3,14 @@ package com.eomcs.oop.ex12;
 
 public class Exam0410 {
 
-  static interface Interest {
+  interface Interest {
     double compute(int money);
   }
 
   static Interest getInterest(final double rate) {
-    // 로컬 클래스로 인터페이스 구현한 후 객체 리턴하기
-    class InterestImpl implements Interest {
-      double rate;
+    // 로컬 클래스로 인터페이스 구현한 후 객체 리턴하기    
+    return money -> money + (money * rate / 100);      
 
-      public InterestImpl(double rate) {
-        this.rate = rate;
-      }
-
-      @Override
-      public double compute(int money) {
-        return money + (money * rate / 100);
-      }
-    }
-    return new InterestImpl(rate);
   }
 
   public static void main(String[] args) {

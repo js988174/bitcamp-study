@@ -6,8 +6,17 @@ public /*abstract*/ class Exam02 implements Servlet {
   // 추상 메서드인채로 남아 있기 때문에
   // 일반 클래스가 될 수 없고,
   // 추상 클래스가 되어야 한다.
+  @Override
   public void init() {}
+  @Override
   public void destroy() {}
+  @Override
   public String getServletInfo() {return null;}
+  @Override
   public String getServletConfig() {return null;}
+  @Override
+  public void service() {
+
+
+  }
 }

@@ -18,8 +18,8 @@ public class Exam0414 {
 
     Interest i2 = getInterest(2.5);
     System.out.printf("금액: %.2f\n", i2.compute(1_0000_0000));
-  }
 
+  }
 }
 
 
