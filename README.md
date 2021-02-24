@@ -129,8 +129,7 @@ build gradle에서 eclipse {
 실행되는 이유: 메모리가 부족할떄 cpu가 부족할떄
 system.gc(): 가비지 청소
 
-<<<<<<< HEAD
-=======
+
 Command 패턴 << design partern >> 특정 상황에 대한 설계 기법 (유지 보수에 좋다)
  ㄴ 사용자의 요청 처리를 한 개의 메서드가 담당할 때
  기존 코드:    명령어가 추가 >  명령어를 처리할 메서드 추가 > 기존 코드를 변경 > 버그 발생 가능성 증가
@@ -166,7 +165,7 @@ private : 자기 자신의 클래스만 접근 가능
 객체지향에서 사용됨
 
 
->>>>>>> 70ae14bb96566658d5a4454f69b8e0ab0bbcdc85
+
 ## 18일차(2021-01-15,금)
 
 - 자바 언어 기초(com.eomcs.lang)
@@ -551,3 +550,41 @@ try fianll 을쓰면 catch없이 쓸 수있다.
 
 Exception : 개발자에게 예외를 강조한다.
 RuntimeException : 예외 처리 강조를 하지 않는다.
+
+RAM은 데이터가 켜질때만 데이터 저장 가능
+
+ms949.txt -> FileInputStream 로 읽기
+
+ASCCI : 0 ~ 127 128 ~ 255 : 유렵문자 , 한글
+
+41 > 0041 , 81 > 0081 , 8c63 > xxxx
+
+utf-8
+영어 1byte 씩 읽어야 한다.  한글:2byte 씩 읽어야 한다.
+
+AB가각  ms 949 : 41 42 ba a1 bf a2   > fileInputStream > new string (  , x , 6 )
+          utf-8   :   41 42 ea ba 8a ba 81  > fileInputStream > new String(,0,8)
+UTF-8 -> UTF16BE
+
+input을 쓸때문자열 출력할때는 인코딩  읽을때는 디코딩을 하는 불편함이 있었다.
+
+writer/reader을 쓸때 문자열 처리를 자동 수행한다.
+
+FileWrite UTF-8로 설정해서 출력해준다
+  ㄴ 앞의 2바이트는 버리고 뒤의 2바이트는  UTF-8로 변환되어 출력
+
+FileOut,InputStream > binary File     > 특정형식으로 인코딩  전용 앱이 있다 (hwp,xls,ppt,doc)
+
+Text File > 일반 텍스트 편집기로 변경 (csv, html , css,js) 가 있다 .
+          byte Strean class                             character Stream class                                               
+  inputStream  outputStream                            writter reader  
+File         File(input,output)Stram                        File(wrieer,reader) 
+            Byte Array-                                        charArray , String
+              piped                                              piped
+
+Stream api 등장 전  각 장비마다 API의 사용법이 달라서 프로그래밍이 불편했다
+Streaming 기법 H/W에 상광넚이 입출력 프로그래밍이 가능 
+
+메모리를 마음대로 준비 하면 안되는 이유: 서버를 관리 하기 때문
+
+BufferedFileInputStream > FileinputStream 을 상속 [byte size cursor 
