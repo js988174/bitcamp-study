@@ -13,6 +13,8 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8' 
 
 }
+
+
 // 프로젝트에서 사용할 자바 라이브러리를 다운로드 받는 서버
   repositories {
     jcenter() // => https://jcenter.bintray.com/
@@ -21,5 +23,6 @@ tasks.withType(JavaCompile) {
   
   // 프로젝트에서 사용할 자바 라이브러리 목록
   dependencies {
+  
  // 현재 특별하게 사용할 라이브러리가 없기 떄문에 일단 비워둔다.
   }

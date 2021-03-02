@@ -1,29 +1,36 @@
 package test;
-// 오른쪽 같이 두 변수 a b 에 정수를 입력하고 b -a를 출력하는 프로그램 작성
+
 import java.util.Scanner;
+
+// 배열 요소 최댓값 구하기
 public class chap01 {
+
+
+
+  static void swap(int[] a, int idx1, int idx2) {
+    int t = a[idx1]; a[idx1] = a[idx2]; a[idx2] = t;
+  }
+
+  static void reverse(int[] a) {
+    for (int i = 0; i < a.length / 2; i++)
+      swap(a, i, a.length - i -1);
+  }
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+    System.out.println("요솟수;");
+    int n = scanner.nextInt();
 
-    System.out.println("a의 값");
-    int a = scanner.nextInt();
+    int[]x = new int[n];
 
-    int b =0;
-
-
-
-    while (true) {
-      System.out.println("b의 값을 입력하세요");
-      b = scanner.nextInt();
-      if (b > a) 
-        break;
-      System.out.println("잘못입력하셨습니다.");
+    for (int i = 0; i <n; i++) {
+      System.out.print("x["+ i +"] : ");
+      x[i] = scanner.nextInt();
     }
+    reverse(x);
 
-    System.out.println("b-a =" + (b-a) );
-
-
-    scanner.close();
+    System.out.println("역순");
+    for (int i = 0; i < n; i++)
+      System.out.println("x["+i+"] =" +x[i]); 
   }
 }
