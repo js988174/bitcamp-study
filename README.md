@@ -221,6 +221,58 @@ try fianll 을쓰면 catch없이 쓸 수있다.
 Exception : 개발자에게 예외를 강조한다.
 RuntimeException : 예외 처리 강조를 하지 않는다.
 
+Networking :한 컴퓨터가 Hub를 통해 다른 컴퓨터들에게 데이터를 줄 수 있음 
+데이터를 보내면 모든 컴퓨터에게 다 간다,
+
+switch hub : 특정한 컴퓨터에게만 데이터를 줄 수 있음
+일반 hub 는 일단 정보를 연결된 컴퓨터에 모두 보내고 받을 컴퓨터만 받는다
+gateway : h
+
+Mac address : ram카드에 있는물리 적인 id= 주소(전부다 id 가 다르다) 
+router : 경로 알려주는 역활
+ 
+ 인트라넷 : 내부망 독자적인망(LAN) -> 폐쇄적임망 
+WAN : LAN 끼리 묶은 것
+Internet : WAN 끼리 묶은 것 
+
+통신 : ip 주소는 16진수로 바꾼뒤 1바이트로 나눈다
+ipAddress : 4byte > 최대 약 42억개의 장비에 주소를 부여할 수 있다
+         ip 주소거 50억개가 넘어가면서 주소 부족 > 해결하기 위해 private Ip Address가 나옴
+                                                                                        ㄴ 공유기 
+문제점 : 사설 ip는 데이터를 주고 받을 수가 없다.
+모든 장비가 연결되는 상황 > IOT(Internet of Things) > 소형 장비(가로등arduino , Raspberry pi 소형장비)
+헤르츠가 높을수록 벽을 뚫을 수가 없다 .
+
+포트 번호란 ? 통신을 접속하기 위한 식별자
+port 고정 번호 :  0 ~ 1023 < 유명한 곳들이 사용중 
+Https 443 pop3 110     
+1024 ~ 49151   < 일반 서버 App이 사용하는 포트 
+ㄴ 어떤 포토 번호를 쓸지 개발자가 지정한다
+ip address/port : 49152 ~ 65535 동적 번호: os가 임의로 부여 
+
+App1      요청,응답          App2 
+요청 하는쪽 : client    응답 하는쪽 : server 
+ex) 인터넷 뱅킹 앱   인터넷 뱅킹 서버 
+       ATM s/w        
+       카톡 메신저            카톡 서버
+        네비게이션         네비게이션 서버
+
+ServserSocket 과 Socket 클래스
+clien                             ServerSocket
+ㄴ socket생성                       ㄴ Server 생성
+
+Socket > getOutputStream() > OutputStream > 데코레이터
+            getInputStream() > InputStream > 데코레이터
+
+ServerSocket >> accept()를 하면 Socket 생성 >> 클라이언트축 소켓과 연결됨
+      ㄴ 접속 대기열                      ㄴ getOutputStream() > OutputStream > 데코레이터
+                                                  getInputStream() > OutputStream > 데코레이터
+
+대기열 : 연결을 끊어도 서버의 대기열에는 클라이언트 정보가 그대로 남아있다.
+          클라이언트가 연결을 끊는다고해서 대기열에 빈자리가 생기는 것은 아니다.
+해결책: accept()호출 , 대기열에서 클라이언트 정보를 꺼내야한다
+
+
 # bitcamp-20201221
 
 ## 원격 Git 서버의 저장소 복제하기
