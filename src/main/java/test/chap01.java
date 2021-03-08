@@ -2,35 +2,42 @@ package test;
 
 import java.util.Scanner;
 
-// 배열 요소 최댓값 구하기
+// 배열 b 요소  a에 복사하기?
 public class chap01 {
 
-
-
-  static void swap(int[] a, int idx1, int idx2) {
-    int t = a[idx1]; a[idx1] = a[idx2]; a[idx2] = t;
+  static void copy(int[] a , int[]b) {
+    int num = a.length <= b.length ? a.length : b.length;
+    for (int i = 0; i < num; i++) 
+      a[i] = b[i];
   }
 
-  static void reverse(int[] a) {
-    for (int i = 0; i < a.length / 2; i++)
-      swap(a, i, a.length - i -1);
-  }
+
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    System.out.println("요솟수;");
-    int n = scanner.nextInt();
 
-    int[]x = new int[n];
+    System.out.println("a요솟수");
+    int na = scanner.nextInt();
 
-    for (int i = 0; i <n; i++) {
-      System.out.print("x["+ i +"] : ");
-      x[i] = scanner.nextInt();
+    int[] a = new int[na];
+
+    for (int i = 0; i < na; i++) {
+      System.out.print("a[" + i + "] : ");
+      a[i] = scanner.nextInt();
     }
-    reverse(x);
+    System.out.println("b요솟수");
+    int nb = scanner.nextInt();
 
-    System.out.println("역순");
-    for (int i = 0; i < n; i++)
-      System.out.println("x["+i+"] =" +x[i]); 
+    int [] b = new int[nb];
+
+    for (int i = 0; i < nb; i++) {
+      System.out.println("b[" + i + " ] :");
+      b[i] = scanner.nextInt();
+    }
+    copy(a,b);
+    System.out.println("복사");
+    for (int i = 0; i< na; i++) {
+      System.out.println("a[" + i + "] = " + a[i]);
+    }
   }
 }

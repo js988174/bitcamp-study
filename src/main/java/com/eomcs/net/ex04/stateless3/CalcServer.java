@@ -64,6 +64,10 @@ public class CalcServer {
     // ss.close();
   }
 
+
+
+
+
   static void processRequest(Socket socket) throws Exception {
     try (Socket socket2 = socket;
         DataInputStream in = new DataInputStream(socket.getInputStream());

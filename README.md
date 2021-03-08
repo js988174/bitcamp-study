@@ -220,16 +220,60 @@ try fianll 을쓰면 catch없이 쓸 수있다.
 
 Exception : 개발자에게 예외를 강조한다.
 RuntimeException : 예외 처리 강조를 하지 않는다.
+[46일차]
+바이너리 파일 : 텍스트 파일 이외에 모든 실행 파일
+텍스트 파일 : 글자로 이루어준 파일
+Text File > 일반 텍스트 편집기로 변경 (csv, html , css,js) 가 있다 .
+          byte Strean class                             character Stream class                                               
+  inputStream  outputStream                            writter reader  
+File         File(input,output)Stram                        File(wrieer,reader) 
+            Byte Array-                                        charArray , String
+              piped                                              piped
 
+FileInputStream , FileOutputStream : 바이트 단위로 출력할 수 있는 클래스
+InPutStreamReader : 바이트 기반을 스트림으로 연결
+BufferedReader: 버퍼를 사용해서 입출력 효율을 높인다 ( 데이터를 라인 단위로 읽는다)
+BufferedInputStream: 입출력 효율을 높이기 위해 사용(한 번에 여러 바이트 입출력 가능)
+DataInputStream: 데이터를 바이트 스트림으로 입출력하게 해준다
+Stream api 등장 전  각 장비마다 API의 사용법이 달라서 프로그래밍이 불편했다
+Streaming 기법 H/W에 상광넚이 입출력 프로그래밍이 가능 
+
+메모리를 마음대로 준비 하면 안되는 이유: 서버를 관리 하기 때문
+
+
+[47일차]
+
+writer/reader을 쓸때 문자열 처리를 자동 수행한다.
+
+FileWrite UTF-8로 설정해서 출력해준다
+  ㄴ 앞의 2바이트는 버리고 뒤의 2바이트는  UTF-8로 변환되어 출력
+인터페이스 : 기능에 대해서만 선언 한 상태 모든 기능을 추상화로 정의한 것
+제네릭 문법 : 타입을 저해서 캄파일시 에러를 방지 하는것, 불필요한 타입 변화를 막는다
+[48일차]
+메타 데이터 : 데이터를 설명하는 데이터 (마크업=부가데이터=태그 같인용어 )
+ex) XML,HTML
+CSV : 콤마로 데이터 구분하는 방법
+JSON : App간 데이터 교환을 할떄 JSON포멧으로 만든후에 전달
+GSON : 역직렬화 해주는거 
+Observer :   수동 감시 
+객체가 특정 상태에 놓일 떄 어떤 작업을 수행시키고 싶을 경우 
+작업의 추가 삭제 
+
+functional interface : 추상메서드가 한 개만 있는 인터페이스 > 람다 문법 적용 가능
+일반 클래스  class x .... {}
+익명 클래스 new ObjectFactory {}
+람다     csvStr -> {}
+메서드 레퍼런스 : 클래스명::스태틱    인스턴스::인스턴스메서드    클래스명::new
+[49일차]
 Networking :한 컴퓨터가 Hub를 통해 다른 컴퓨터들에게 데이터를 줄 수 있음 
 데이터를 보내면 모든 컴퓨터에게 다 간다,
-
+router : 경로 알려주는 역활
 switch hub : 특정한 컴퓨터에게만 데이터를 줄 수 있음
 일반 hub 는 일단 정보를 연결된 컴퓨터에 모두 보내고 받을 컴퓨터만 받는다
-gateway : h
+gateway : 공유기 같은거
 
 Mac address : ram카드에 있는물리 적인 id= 주소(전부다 id 가 다르다) 
-router : 경로 알려주는 역활
+
  
  인트라넷 : 내부망 독자적인망(LAN) -> 폐쇄적임망 
 WAN : LAN 끼리 묶은 것
@@ -271,7 +315,17 @@ ServerSocket >> accept()를 하면 Socket 생성 >> 클라이언트축 소켓과
 대기열 : 연결을 끊어도 서버의 대기열에는 클라이언트 정보가 그대로 남아있다.
           클라이언트가 연결을 끊는다고해서 대기열에 빈자리가 생기는 것은 아니다.
 해결책: accept()호출 , 대기열에서 클라이언트 정보를 꺼내야한다
-
+[50일차]
+Connection-Oriented(연결 지향) : 한번 연결 후 여러 번 데이터 송수신 예) 전화 FTP 
+게임 프로토콘
+Connectionless(비연결성) : Board casting 데이터 전송 < 특정 목저지를 명시하지 않는다
+ 예) 편지 , ping
+Stateful 방식 : 한번 연결하면 연결을 끊을떄까지 계속 연결 되어 있다.
+                온라인 게임을 생각해보자  
+Stateless 방식 : 매번 데이터를 송수신 할 때마다 연결 수행 
+                114 고객 센터를 생각해보자 
+                
+therad 개념 : 사용하면 동시에 처리 가능 순서를 가달리지 않아도 된다. 
 
 # bitcamp-20201221
 
@@ -1092,24 +1146,3 @@ AB가각  ms 949 : 41 42 ba a1 bf a2   > fileInputStream > new string (  , x , 6
 UTF-8 -> UTF16BE
 
 input을 쓸때문자열 출력할때는 인코딩  읽을때는 디코딩을 하는 불편함이 있었다.
-
-writer/reader을 쓸때 문자열 처리를 자동 수행한다.
-
-FileWrite UTF-8로 설정해서 출력해준다
-  ㄴ 앞의 2바이트는 버리고 뒤의 2바이트는  UTF-8로 변환되어 출력
-
-FileOut,InputStream > binary File     > 특정형식으로 인코딩  전용 앱이 있다 (hwp,xls,ppt,doc)
-
-Text File > 일반 텍스트 편집기로 변경 (csv, html , css,js) 가 있다 .
-          byte Strean class                             character Stream class                                               
-  inputStream  outputStream                            writter reader  
-File         File(input,output)Stram                        File(wrieer,reader) 
-            Byte Array-                                        charArray , String
-              piped                                              piped
-
-Stream api 등장 전  각 장비마다 API의 사용법이 달라서 프로그래밍이 불편했다
-Streaming 기법 H/W에 상광넚이 입출력 프로그래밍이 가능 
-
-메모리를 마음대로 준비 하면 안되는 이유: 서버를 관리 하기 때문
-
-BufferedFileInputStream > FileinputStream 을 상속 [byte size cursor 

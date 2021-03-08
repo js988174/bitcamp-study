@@ -46,10 +46,12 @@ public class RequestProcessor extends Thread {
       int result = 0;
 
       switch (op) {
-        case "+": result = a + b; Thread.sleep(10000); break;
+        case "+": result = a + b; break;
         case "-": result = a - b; break;
         case "*": result = a * b; break;
-        case "/": result = a / b; break;
+        case "/": 
+          result = a / b; 
+          Thread.sleep(10000); break;
         default:
           return String.format("%s 연산자를 지원하지 않습니다.", op);
       }

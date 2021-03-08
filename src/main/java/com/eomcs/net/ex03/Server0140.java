@@ -18,7 +18,6 @@ public class Server0140 {
           DataOutputStream out = new DataOutputStream(socket.getOutputStream());
           DataInputStream in = new DataInputStream(socket.getInputStream())) {
 
-
         System.out.println("클라이언트가 보낸 Data를 기다리고 있음!");
 
         int value = in.readInt();
