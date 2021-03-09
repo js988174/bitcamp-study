@@ -1,4 +1,31 @@
 # bitcamp-20201221
+[9일차]
+1.프로 젝트 임포트 하기까지 추가해야하는것 정리
+폴더를 만든다 > git ignore 파일을 넣어준다 > github에 폴더를 만든다 
+ > git clone 주소를 해준다. 
+ > gradle init 을 해줘서 설정해준다 > build.gradle 파일에서 id java id eclipse 
+   UTF-8 설정 , 이름 바꾸기, mainclass 이름을 설정 해준다 > cmd에서 gradle eclipse 해준다
+ >이클립스에서 import 해주기 > README를 resources 와 test에 넣는다.
+
+2.gitignore 파일에 추가 해야할것 정리
+gitignore에 java linux java web visual studio code node eclipse window macos gradle 
+추가하고 
+.project에 있는 #지우고 .classpath 추가
+맨 마지막에
+*.exe  
+node_modules/
+temp/
+Debug/
+Release/
+html-exam/ 
+
+3. 개발 환경 셋팅법
+자바 스크립트 다운 받는곳 : nodejs.org   node-v 구버젼 다운받기 
+mingw (1,2,7)다운  cmd에서 gu install native-image 로 설치
+graalvm.ce.java에서 11버젼 다운(11버젼을 많이씀)
+자바 환경 변수 설정 path에 추가하고 새로 만들기에서 11버젼 bin까지 들어가주기
+이클립스 develope 다운   naver d2 coding 글꼴 다운 
+git hub eclipse java google style xml 다운
 
 
 [10일차]
@@ -141,7 +168,20 @@ static:
 
 static 메서드는 오직 static 멤버만 접근 가능
 this 키워드를 사용할 수 없다
+[23일차]
+클래스 로딩: 하위 클래스는 상위 클래스에게 로딩 위임
+하위 클래스는 상위 크래스를 바라볼 수 있지만 그 반대는 안된다.
 
+스택: 원시 타입의 데이터들이 할당되고 실제 값을 직접 저장
+힙 : 단 하나의 힙 영역만 존재 레퍼런스 변수가 스택에 올라가게 된다
+스태틱으로 선언 되지 않은 모든 변수는 인스턴스 필드
+스태틱으로 선언 되지 않은 모든 메소드
+
+인스턴스 메서드의 this는 자기 자신을 가르킨다
+[24일차]
+Reference Counting은 객체, 메모리 블록, 디스크 공간 등을 참조하는 Reference, Pointer, Handle 의 갯수를 저장하는 기술이다
+[25일차]
+생성자는 객체를 생성시 바로 값을 가지게 한다.
 [43일차]
 제네릭: 타입을 미리 지정해주는 것이 아닌 사용자가 값을 지정해주는 것
 wildCard<?> : 어떤 타입이든 상관이 없다 (되도록이면 쓰지 말자)
