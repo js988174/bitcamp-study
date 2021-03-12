@@ -182,6 +182,17 @@ this 키워드를 사용할 수 없다
 Reference Counting은 객체, 메모리 블록, 디스크 공간 등을 참조하는 Reference, Pointer, Handle 의 갯수를 저장하는 기술이다
 [25일차]
 생성자는 객체를 생성시 바로 값을 가지게 한다.
+this()의 사용법은 인스턴스 멤버인 필드를 명시하고자 할떄 사용한다.
+static {          // <<<< static 초기화문 
+    //수행문;
+    }
+    
+[42일차]
+throws: 메서드 호출시 예외를 발생시키고 싶을 경우에만 해당한다.
+Exception : try catch로 잡아줘야 한다 그렇지 않으면 컴파일 오류 발생
+RuntimeException : 프로그램 오류로 발생하므로 try catch를 사용 안해도 괜찮다.
+try-with-resources : close() 메서드를 자동으로 호출해서 자원을 해제시켜준다
+finally : 예외 발생과 상관없이 무조권 실행 시킨다.
 [43일차]
 제네릭: 타입을 미리 지정해주는 것이 아닌 사용자가 값을 지정해주는 것
 wildCard<?> : 어떤 타입이든 상관이 없다 (되도록이면 쓰지 말자)
