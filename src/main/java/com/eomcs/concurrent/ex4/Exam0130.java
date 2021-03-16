@@ -19,7 +19,6 @@ public class Exam0130 {
     Thread.sleep(3000); // milliseconds
 
     System.out.println("스레드 실행 후");
-
   }
 
 }

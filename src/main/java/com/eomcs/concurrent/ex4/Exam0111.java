@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Exam0111 {
   public static void main(String[] args) {
+    System.out.println("스레드 시작시킴.");
+
     Thread t = new Thread(() -> { // Runnable 구현체를 정의하고 생성한다.
       for (int i = 0; i < 1000; i++) {
         System.out.println("===> " + i);
@@ -13,7 +15,6 @@ public class Exam0111 {
     });
 
     t.start();
-    System.out.println("스레드 시작시킴.");
 
     Scanner keyboard = new Scanner(System.in);
     keyboard.nextLine(); // 스레드가 종료될 때까지 시간을 벌기 위함.
