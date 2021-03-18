@@ -8,13 +8,14 @@ public class Search {
   static int seqSearch(int[] a, int n, int key) {
     int i = 0;
 
-    while (true) {
-      if (i == n)
-        return -1;      // 검색 실패!(-1을 반환)
+    a[n] = key;
+
+    while(true) {
       if (a[i] == key)
-        return i;       // 검색 성공!(인덱스를 반환)
+        break;
       i++;
     }
+    return i == n ? -1 : i;
   }
 
   public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Search {
 
     System.out.println("요솟수: " );
     int num = scanner.nextInt();
-    int[] x = new int[num];
+    int[] x = new int[num + 1];
 
     for (int i = 0; i < num; i++) {
       System.out.println("x[" + i + "]:");
