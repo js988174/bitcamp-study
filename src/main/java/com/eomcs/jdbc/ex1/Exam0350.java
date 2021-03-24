@@ -18,6 +18,7 @@ public class Exam0350 {
       int count = stmt.executeUpdate(
           "update x_board set view_count = view_count + 1"
               + " where board_id = 4");
+
       System.out.printf("%d 개 변경 성공!", count);
     }
   }

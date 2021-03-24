@@ -503,6 +503,37 @@ outer inner 차이점 : outer는 배정되지 않은 데이터도 출력을 해�
 API: 애플리케이션을 제작할때 사용하는 도구
 JDBC API : 드라이버 제어와 관련된 클래스 제공, 드라이버 호출 규칙을 인터페이스로 정의
 Oracle JDBC Driver : JDBC API 규칙에 따라 클래스를 구현, 모든 JDBC 드라이버는 사용법이 같다.
+[63일차]
+java.sql.Connection을 쓰면 어떤 인터페이스인지 상관없이 받아 오기만 하면 된다.
+
+visual studio code 가 .classpath를 잘못 덮여 씌워버려서 사려져 버린다
+다시 gradle eclipse 해주면 된다.
+
+Resultset Driver가 connection에게 바로 리턴해준다. connection은 statement에게 바로 리턴
+satement는 resultset에게 바로 리턴 resultset은 dbms에서 결과 가져옴
+
+
+정리 : Connection 받아와서 DriverManager에게 연결하기 DriverManager는 Driver 객체를 찾는다.
+Statement : SQL문을 DBMS의 형식에 따라 인코딩하여 서버에 전달
+executeUpdate(): 데이터를 변경할때 사용
+executeQuery():  서버에서 데이터 가져오기
+ResultSet : 서버에서 결과 가져오기
+getString(컬럼번호) : 0이 아닌 1부터 사용한다 헷갈리지 않게 변수명을 쓰도록하자
+fk가 걸려있으면 자식 데이터를 먼저 지우자 
+
+SQL 삽입 공격이란? 명령을 삽입하여 프로그램 의도와 다르게 데이터를 조작
+해결 방법 : PreparedStatement 사용
+
+Statement.RETURN_RENERATED_KEYS : 자동 생성된 pk값을 받겠다고 설정하는 문법
+
+여러 개의 데이터 변경은 수동으로 해야한다.
+
+setAutoCommit(false) 설정 하는 이유: 한 단위로 작업을 해야할 경우 사용
+
+트랜잭션 : 여러 개의 데이터 변경 작업을 한 단위로 묶는것
+예시 ) : 모든 주문 업무를 묶어놓음
+
+커넥션을 공유하는 상황이면 롤백해야한다.
 
 # bitcamp-20201221
 
