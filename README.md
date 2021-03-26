@@ -512,6 +512,7 @@ visual studio code 가 .classpath를 잘못 덮여 씌워버려서 사려져 버
 Resultset Driver가 connection에게 바로 리턴해준다. connection은 statement에게 바로 리턴
 satement는 resultset에게 바로 리턴 resultset은 dbms에서 결과 가져옴
 
+CRUD : create , read , update , delete
 
 정리 : Connection 받아와서 DriverManager에게 연결하기 DriverManager는 Driver 객체를 찾는다.
 Statement : SQL문을 DBMS의 형식에 따라 인코딩하여 서버에 전달
@@ -531,9 +532,19 @@ Statement.RETURN_RENERATED_KEYS : 자동 생성된 pk값을 받겠다고 설정�
 setAutoCommit(false) 설정 하는 이유: 한 단위로 작업을 해야할 경우 사용
 
 트랜잭션 : 여러 개의 데이터 변경 작업을 한 단위로 묶는것
-예시 ) : 모든 주문 업무를 묶어놓음
+          
+예시 ) : 모든 주문 업무를 묶어놓음 한개라도 실패하면 실행이 안된다.
 
 커넥션을 공유하는 상황이면 롤백해야한다.
+
+[64일차]
+
+DAO(Data Access Object)란? 데이터 처리 관련 코드를 별도의 클래스로 캡슐화 시키는것 
+DTO(Data Transfer Object)란? 여러개의 값을 호출 할 떄 여러 값을 간단히 전달하기 위해 만든 클래스
+
+VO=Domain=DTO 다 같은거
+
+
 
 # bitcamp-20201221
 
