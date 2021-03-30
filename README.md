@@ -543,7 +543,7 @@ DAO(Data Access Object)란? 데이터 처리 관련 코드를 별도의 클래�
 DTO(Data Transfer Object)란? 여러개의 값을 호출 할 떄 여러 값을 간단히 전달하기 위해 만든 클래스
 
 VO=Domain=DTO 다 같은거
-
+like concat('%',?,'%') : 검색할때 쓴다 DBMS 마다 다르다
 
 
 # bitcamp-20201221
@@ -578,9 +578,6 @@ VO=Domain=DTO 다 같은거
 > git pull
 ```
 
-## 1일차(2020-12-21,월) ~ 8일차(2020-12-31,목)
-
-- 자바 프로그래밍 오리엔테이션
 
 ## 9일차(2021-01-04,월)
 
