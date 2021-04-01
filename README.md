@@ -579,5 +579,34 @@ DAO 간게 관계는 맺지 말자 => DAO끼리 종속 관계는 만들지 말�
 
 인터페이스 도입을 하면 DBMS를 교체할때  쉽게 바꿀 수 있다.
 
+[67일차]
 
+SQL 교체시 SQL 변경해야 한다.)
+: SQL ID 와 SQl문이 연결되어 있다. 
 
+OR Mapper
+
+App -> 도우미 클래스  --> DBMS SQL 변환기
+                             <-- DBMS에 맞춰 SQL생성 리턴
+  객체를 제어하는 명령문(개발자가 작성)
+도우미 클래스가 인사하는 전용 객체 질의 문법을 사용 => DBMS에 비종속적
+=> 교체시 변경 필요가 없다
+
+XML 선언 :  대 소문자 구분 , version 값은 1 , encoding은 utf-8 생략 가능
+
+XML Doc Type 
+!DOCTYPE : XML 태그의 사용 규칙에 대한 정보 
+configuration : 루틈 태크 (가장 바깥 쪽의 태그, 한 개만 존재)
+public : 외부에 공개 여부
++표쥰 - 개인,회사  mybatis.org 규칙을 만든 사람이나 단체명 
+DT config 규칙 이름  EN 규칙을 정의할 때 사용할 언어
+
+자바 객체 생성
+new 사용 ->공장 객체 -> 여러 객체는 조심해서 -> 빌 더
+  복잡할 경우 사용한다.             객체 생성
+
+new Car   -> new CarFactory  --> Car
+
+CarFacoryBuilder --> CarFactoryBuilder  --> car
+       new       build                      create
+이렇게 만드는 이유:  객체 생성 과정이 복잡해서 Factory 도움을 받아서 Car을 생성한다.
