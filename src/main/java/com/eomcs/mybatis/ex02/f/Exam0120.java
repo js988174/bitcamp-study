@@ -1,4 +1,4 @@
-// SqlSession 사용법 - selectOne() 언제 사용? 결과가 1 or 0일떄
+// SqlSession 사용법 - selectOne()은 언제 사용? 결과가 0 또는 1개 일 때
 package com.eomcs.mybatis.ex02.f;
 
 import org.apache.ibatis.io.Resources;
@@ -14,17 +14,14 @@ public class Exam0120 {
 
     // selectOne()
     // - select 결과가 0 또는 1개 일 때 호출할 수 있다.
-    // - 리턴 값은 한 개의 결과 레코드 값을 담은 객체이다.
-    // - 결과가 없으면 리턴 값은 null 이다.
+    // - 결과가 없으면 리턴 값은 null 이다. 
     // 
-    Board b = sqlSession.selectOne("BoardMapper.selectBoard2",9);
+    Board b = sqlSession.selectOne("BoardMapper.selectBoard2", 4);
 
     if (b == null) {
       System.out.println("해당 번호의 게시글이 없습니다.");
       return;
     }
-
-    // 컬러몀과 자바 객체의 프로퍼티명이 일치한다면 다음과 같이 정상적으로 데이터를 꺼내올 수 있다.
 
     System.out.printf("%d,%s,%s,%s,%d\n",
         b.getNo(),
@@ -32,7 +29,6 @@ public class Exam0120 {
         b.getContent(),
         b.getRegisteredDate(),
         b.getViewCount());
-
 
     sqlSession.close();
   }
