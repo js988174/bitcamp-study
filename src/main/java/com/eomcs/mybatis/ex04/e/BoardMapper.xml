@@ -12,10 +12,7 @@
     <result column="view_count" property="viewCount"/>
   </resultMap>
   
-  <!-- 다음 SQL 문의 문제점은 
-       조건에 일치하는 경우가 없을 때 
-       where 다음에 놓이는 조건문이 없다는 것이다.
-       그래서 실행할 때 SQL문법 오류가 발생한다. -->
+  <!-- foreach 를 사용하지 않으면 값의 개수 만큼 SQL 코드를 작성해야 한다. -->
   <select id="select1" resultMap="BoardMap" parameterType="map">
     select 
       board_id,
@@ -25,21 +22,21 @@
       view_count  
     from x_board
     <where> 1=0
-      <if test="keyboard1 != ''">
-       or title like concat('%', #{keyword1}, '%')
+      <if test="keyword1 != ''">
+        or title like concat('%', #{keyword1}, '%')
       </if>
-       <if test="keyboard2 != ''">
-       or title like concat('%', #{keyword2}, '%')
+      <if test="keyword2 != ''">
+        or title like concat('%', #{keyword2}, '%')
       </if>
-        <if test="keyboard3 != ''">
-       or title like concat('%', #{keyword3}, '%')
+      <if test="keyword3 != ''">
+        or title like concat('%', #{keyword3}, '%')
       </if>
     </where>
     order by board_id desc
   </select>
 
-<!-- foreach를 사용하면 값 개수 만큼 SQL 코드를 반복적으로 사용할 수 있다. -->
- <select id="select2" resultMap="BoardMap" parameterType="map">
+  <!-- foreach를 사용하면 값 개수 만큼 SQL 코드를 반복적으로 생성할 수 있다.  -->
+  <select id="select2" resultMap="BoardMap" parameterType="map">
     select 
       board_id,
       title,    
@@ -48,13 +45,12 @@
       view_count  
     from x_board
     <where> 1=0
-    <foreach collection="keywords" item="keyword">
-    or title like concat('%', #{keyword}, '%')
-    </foreach>
+      <foreach collection="keywords" item="keyword">
+        or title like concat('%', #{keyword}, '%')
+      </foreach>
     </where>
     order by board_id desc
   </select>
-
   
 </mapper>
 

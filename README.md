@@ -1,13 +1,25 @@
 # bitcamp-20201221
-[9일차]
-1.프로 젝트 임포트 하기까지 추가해야하는것 정리
-폴더를 만든다 > git ignore 파일을 넣어준다 > github에 폴더를 만든다 
- > git clone 주소를 해준다. 
- > gradle init 을 해줘서 설정해준다 > build.gradle 파일에서 id java id eclipse 
-   UTF-8 설정 , 이름 바꾸기, mainclass 이름을 설정 해준다 > cmd에서 gradle eclipse 해준다
- >이클립스에서 import 해주기 > README를 resources 와 test에 넣는다.
+[개발 환경 셋팅]
+자바 API   MariaDB 사용법 즐겨찾기 해두기
 
-2.gitignore 파일에 추가 해야할것 정리
+
+다운 꼭 안해도 될것 mingw(c,c+용) nodejs
+mingw (1,2,7)다운 했다면  cmd에서 gu install native-image 로 설치 
+graalvm.ce.java에서 11버젼 다운(11버젼을 많이씀) , openjdk 11 설치 << 두개 환경 변수 추가
+자바 환경 변수 설정 path에 추가하고 새로 만들기에서 11버젼 bin까지 들어가주기
+
+이클립스 설정: 이클립스 develope 다운   naver d2 coding 글꼴 다운 
+ eclipse java google style xml 다운    다운 다하고 강사님꺼 찾아보기 
+ gradle 다운 path 추가 
+
+git 설치법: git client 다운 > mkdir git  > cd git > git clone 주소 
+> git config --global user.email "rudtjs4902@naver.com"
+git config --global user.name "js988174" 유저 등록 하기 
+
+폴더 처음 만들떄 :  mkdir 폴더 이름 >> gradle init >> resource 폴더에 README.md 설정
+gradle run으로 실행 해서 확인해보자 >> 플로그인에 id ,eclipse , utf-8 , 이름을 바꿔주자
+>> cmd에서 gradle eclipse 실행   eclipse에서 import
+>> gitignore 파일에 추가 해야할것 정리
 gitignore에 java linux java web visual studio code node eclipse window macos gradle 
 추가하고 
 .project에 있는 #지우고 .classpath 추가
@@ -19,15 +31,7 @@ Debug/
 Release/
 html-exam/ 
 
-3. 개발 환경 셋팅법
-자바 스크립트 다운 받는곳 : nodejs.org   node-v 구버젼 다운받기 
-mingw (1,2,7)다운  cmd에서 gu install native-image 로 설치
-graalvm.ce.java에서 11버젼 다운(11버젼을 많이씀)
-자바 환경 변수 설정 path에 추가하고 새로 만들기에서 11버젼 bin까지 들어가주기
-이클립스 develope 다운   naver d2 coding 글꼴 다운 
-git hub eclipse java google style xml 다운
-
-
+ mairadb 설치 해주고 따라하기 
 [10일차]
 컴파일 방식 : jvm이 이해할 수 있는 중간 언어로 바꿔준다 < 유사 기계어로 보자
 인터프리터 방식: 소스코드를 한 문장씩 읽고 기계어로 바꿔준다

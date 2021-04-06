@@ -5,7 +5,6 @@
 
 <mapper namespace="BoardMapper">
   
-
   <resultMap type="Board" id="BoardMap">
     <id column="board_id" property="no"/> 
     <result column="contents" property="content"/>
@@ -13,10 +12,10 @@
     <result column="view_count" property="viewCount"/>
   </resultMap>
   
-<!-- 결과가 2개 이상되는 select 문을 실행할 때는 selectOne() 을 사용할 수 없다. -->
+  <!-- select 문의 실행 결과가 2개 이상일 때는 selectOne() 으로 실행할 수 없다. -->
   <select id="selectBoard1" resultMap="BoardMap">
     select 
-      board_id, 
+      board_id,
       title,    
       contents,
       created_date, 
@@ -24,9 +23,10 @@
     from x_board
   </select>
   
+  <!-- select 문의 실행 결과가 1개 인 경우 -->
   <select id="selectBoard2" resultMap="BoardMap" parameterType="int">
     select 
-      board_id, 
+      board_id,
       title,    
       contents,
       created_date, 
@@ -36,9 +36,9 @@
   </select>
   
   <!-- 결과를 Map 객체로 리턴 받을 수 있다. -->
-   <select id="selectBoard3" resultType="Map" parameterType="int">
+  <select id="selectBoard3" resultType="map" parameterType="int">
     select 
-      board_id, 
+      board_id,
       title,    
       contents,
       created_date, 

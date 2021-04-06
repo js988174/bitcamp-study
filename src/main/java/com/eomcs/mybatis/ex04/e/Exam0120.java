@@ -16,8 +16,9 @@ public class Exam0120 {
     Scanner keyboard = new Scanner(System.in);
 
     ArrayList<String> keywords = new ArrayList<>();
+
     while (true) {
-      System.out.print("검색어(빈 문자열: 입력완료) ");
+      System.out.print("검색어?(빈 문자열: 입력 완료!) ");
       String keyword = keyboard.nextLine();
       if (keyword.length() == 0) {
         break;
@@ -35,9 +36,9 @@ public class Exam0120 {
     HashMap<String,Object> params = new HashMap<>();
     params.put("keywords", keywords);
 
-    // foreach 태그를 사용하면
+    // foreach 태그를 사용하면 
     // - 값의 개수 만큼 SQL 코드를 반복해서 생성할 수 있다.
-    //
+    // 
     List<Board> boards = sqlSession.selectList("BoardMapper.select2", params);
 
     for (Board b : boards) {

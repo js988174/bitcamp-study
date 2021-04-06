@@ -1,4 +1,4 @@
-// SqlSession 사용법 - 결과가 한 개일 때 => selectOne()
+// SqlSession 사용법 - 결과가 여러 개일 때 => selectOne() 사용하면?
 package com.eomcs.mybatis.ex02.f;
 
 import org.apache.ibatis.io.Resources;
@@ -19,15 +19,12 @@ public class Exam0110 {
     // 
     Board b = sqlSession.selectOne("BoardMapper.selectBoard1");
 
-    // 컬러몀과 자바 객체의 프로퍼티명이 일치한다면 다음과 같이 정상적으로 데이터를 꺼내올 수 있다.
-
     System.out.printf("%d,%s,%s,%s,%d\n",
         b.getNo(),
         b.getTitle(),
         b.getContent(),
         b.getRegisteredDate(),
         b.getViewCount());
-
 
     sqlSession.close();
   }

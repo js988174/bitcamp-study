@@ -14,7 +14,7 @@ public class Exam0120 {
         "com/eomcs/mybatis/ex03/a/mybatis-config.xml")).openSession();
 
     // 예) 특정 제목의 게시글을 가져온다.
-    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard2", "haha");
+    List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard2", "제목1");
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n",

@@ -1,11 +1,17 @@
 package com.eomcs.mybatis.vo;
 
 public class AttachFile {
+
   int filedNo;
+
+  int fileNo;
+
   String filePath;
   int boardNo;
 
   public AttachFile() {
+
+
 
   }
 
@@ -14,11 +20,12 @@ public class AttachFile {
     this.filePath = filePath;
   }
 
-  public int getFiledNo() {
-    return filedNo;
+
+  public int getFileNo() {
+    return fileNo;
   }
-  public void setFiledNo(int filedNo) {
-    this.filedNo = filedNo;
+  public void setFileNo(int fileNo) {
+    this.fileNo = fileNo;
   }
   public String getFilePath() {
     return filePath;
