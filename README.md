@@ -614,3 +614,17 @@ new Car   -> new CarFactory  --> Car
 CarFacoryBuilder --> CarFactoryBuilder  --> car
        new       build                      create
 이렇게 만드는 이유:  객체 생성 과정이 복잡해서 Factory 도움을 받아서 Car을 생성한다.
+
+
+[68~]
+mybatis 설명
+ id : SQL문을 찾을 때 사용할 식별자이다.
+ resultType : select 결과를 저장할 클래스이름이나 별명이다. 
+ type: 자바 객체의 클래스명 또는 별명
+parameterType: 구문에 전달된 파라미터의 패키지 경로를 포함한 전체 클래스명이나 별칭
+CDATA 섹션: XML 파서가 혼동을 일으킬 문자가 많을 떄 사용
+#{title} ==> get(title) 리턴 값을 의미한다.
+#{} : 오직 값만 삽입할 수 있다.
+${}: 문법을 사용해야 한다.
+sql 테그를 사용하면 별도로 정의할 수 있다.
+반복문 사용 : include refid
