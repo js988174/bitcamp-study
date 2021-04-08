@@ -628,3 +628,46 @@ CDATA 섹션: XML 파서가 혼동을 일으킬 문자가 많을 떄 사용
 ${}: 문법을 사용해야 한다.
 sql 테그를 사용하면 별도로 정의할 수 있다.
 반복문 사용 : include refid
+
+resultType   :   전체 경로 
+resultMap : 직접 원하는 클래스에 매핑 
+
+collection : 전달받은 인자 
+item : 전달받은 값을 alias 명으로 대체 
+separator : 반복 되는 사이에 출력할 문자열
+index : 반복되는 구문 번호
+
+SQL xaml 문법 
+
+sql : 다른 구문에서 재사용하기 위해 만드는거
+
+자동 커밋의 문제점 : 예외가 발생하기 전에 insert가 되기 때문에 문제가 발생한다
+                          예) 주문등록 -> 주문 정보 입력, 결제 정보 입력, 배송 요청 입력
+                               
+자동 커밋 말고 수동 커밋을 써야 하는 이유 : 롤백 요청(삭제, 취소)을 하게 되면 롤백 요청
+
+             주문 등록 처럼 여러 개의 데이터 변경 작업이 한 단위로 묶고 싶으면,
+            수동 커밋 모드로 실행 해라 모든 작업이 성공해야 커밋을 요청한다
+
+
+Mybatis에서 자동 커밋과 수동 커밋
+ sqlSessionFactory.open.Session() << 수동이면 ()안에 false, 아니면 빈칸   자동이면 ture
+여러 개의 작업을 묶은 경우  rollback()을 호출한다.                                                
+
+App -> collection  : 전원 off면 data 소멸
+
+App  File I/O API -> 파일 : 전원 off data 유지
+
+client server App -> 여러 애플리케이션 data 공유
+
+DBMS -> 파일 : 파일이 data를 저장 변경 삭제 조회 하는 것을 대신 처리한다.(개발자가 입출력 x)
+
+Mybatis API 사용 : Command 객체를 이용하여 DAO를 부르고 DAO가 Mybatis API를 부른다
+이점 : 데이터 처리, 트랜젝션 제어 commit/rollback, UI 처리
+
+상황: ProjectDeleteHandler -> TaskDao   
+                                     -> ProjectDao 
+문제점1 각각의 DAO 메서드에서 트래잭션을 제어하기 때문에 여러 DAO를 통해  
+           데이터 변경을 수행할 경우 한 트랜잭션으로 묶어 제어할 수 없다.
+ 문제점2 각 메서드가 트랜잭션을 제어할 경우 
+  -> 데이터 변경을 위해 다른 메서드를 호출할 때 한 트랜잭션으로 묶을 수 없다.
