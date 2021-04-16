@@ -1,0 +1,13 @@
+// 애노테이션 중복 사용  - 여러 번 사용 가능
+package com.eomcs.annotation.ex7;
+
+import java.lang.annotation.Repeatable;
+
+// 반복에 대한 정보를 정의한 애노테이션을 지정해야 한다.
+
+@Repeatable(value=Employees.class)
+public @interface Employee {
+  String value();
+}
+
+
