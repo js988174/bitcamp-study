@@ -32,6 +32,9 @@ Release/
 html-exam/ 
 
  mairadb 설치 해주고 따라하기 
+
+ 톰캣 10버전 아래로 설치 > 환경 변수 설정 CATALINA_HOME 새로 만들기   >
+  PATH에는 bin까지 설정
 [10일차]
 컴파일 방식 : jvm이 이해할 수 있는 중간 언어로 바꿔준다 < 유사 기계어로 보자
 인터프리터 방식: 소스코드를 한 문장씩 읽고 기계어로 바꿔준다
@@ -673,4 +676,4 @@ Mybatis API 사용 : Command 객체를 이용하여 DAO를 부르고 DAO가 Myba
   -> 데이터 변경을 위해 다른 메서드를 호출할 때 한 트랜잭션으로 묶을 수 없다.
 
 [71일차]
-use-case
+selectList : 목록 리턴  selectOne : 한 개의 결과 리턴 
