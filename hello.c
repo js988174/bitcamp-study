@@ -12,4 +12,5 @@ int main(int argc, char* argv[]) {
   printf("Hello\n");
   print(100);
   print(3.14f);
+  print(3.14f);
 }
