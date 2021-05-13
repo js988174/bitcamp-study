@@ -2,6 +2,7 @@
 [개발 환경 셋팅]
 자바 API   MariaDB 사용법 즐겨찾기 해두기
 
+git push -u origin main << 새 폴더 만들고 git push할때 이렇게 해야함
 
 다운 꼭 안해도 될것 mingw(c,c+용) nodejs
 mingw (1,2,7)다운 했다면  cmd에서 gu install native-image 로 설치 
